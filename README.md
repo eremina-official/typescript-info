@@ -67,3 +67,14 @@ export default tseslint.config([
   },
 ])
 ```
+
+TODO
+1. Routing
+2. CSS library
+3. linter and prettier
+4. Vitest
+5. CI/CD
+
+Pages
+1. Concepts
+2. Links
