@@ -74,6 +74,7 @@ TODO
 3. linter and prettier
 4. Vitest
 5. CI/CD
+6. Publish on github pages
 
 Pages
 1. Concepts
