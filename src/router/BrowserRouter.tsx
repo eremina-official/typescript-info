@@ -3,8 +3,14 @@ import { RoutePaths } from './RoutePaths';
 import App from '../App';
 import MainPage from '../pages/MainPage';
 import DataTypes from '../pages/DataTypes';
+import type { JSX } from 'react';
 
-const routes = [
+type RoutesType = {
+  path: string;
+  element: JSX.Element;
+}[];
+
+const routes: RoutesType = [
   {
     path: RoutePaths.HOME,
     element: <MainPage />,
@@ -13,9 +19,13 @@ const routes = [
     path: RoutePaths.DATA_TYPES,
     element: <DataTypes />,
   },
+  {
+    path: RoutePaths.GENERICS,
+    element: <div>Generics Page</div>,
+  },
 ];
 
-const mappedRoutes = routes.map((route) => {
+const mappedRoutes: RoutesType = routes.map((route) => {
   return {
     ...route,
     element: <App>{route.element}</App>,

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppBar, Drawer, Menu, Stack, Box, Paper, MenuList, MenuItem } from '@mui/material';
@@ -27,7 +26,7 @@ function App({ children }: { children?: React.ReactNode }) {
   const menuItems: { label: string; path: string }[] = [
     { label: 'Home', path: RoutePaths.HOME },
     { label: 'Data types', path: RoutePaths.DATA_TYPES },
-    { label: 'Logout', path: '/logout' },
+    { label: 'Generics', path: RoutePaths.GENERICS },
   ];
 
   return (
