@@ -1,8 +1,8 @@
-interface RoutePaths {
+interface RoutePathsType {
   [key: string]: string;
 }
 
-export const RoutePaths = {
+export const RoutePaths: RoutePathsType = {
   HOME: '/',
   DATA_TYPES: '/data-types',
 } as const;
