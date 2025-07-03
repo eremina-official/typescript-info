@@ -16,6 +16,11 @@ const theme = createTheme({
       secondary: '#46505A',
     },
   },
+  typography: {
+    h1: {
+      fontSize: '2em',
+    },
+  },
 });
 
 function App({ children }: { children?: React.ReactNode }) {
@@ -27,23 +32,24 @@ function App({ children }: { children?: React.ReactNode }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <AppBar sx={{ position: 'static', p: 2 }}>Typescript Features</AppBar>
 
         <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
-            minHeight: '100vh',
+            minHeight: 'calc(100vh - 50px)',
           }}
         >
           <Box
             sx={{
               width: 300,
               display: { xs: 'none', md: 'block' },
+              backgroundColor: '#f5f5f5',
             }}
           >
-            <Stack direction="row" sx={{ padding: 2, backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
+            <Stack direction="row" sx={{ padding: 2 }}>
               <MenuList>
                 {menuItems.map((item) => (
                   <MenuItem key={item.label}>
@@ -54,7 +60,7 @@ function App({ children }: { children?: React.ReactNode }) {
             </Stack>
           </Box>
 
-          <Box sx={{ padding: 2, flexGrow: 1 }}>{children}</Box>
+          <Box sx={{ padding: '24px', flexGrow: 1 }}>{children}</Box>
         </Box>
       </Box>
     </ThemeProvider>

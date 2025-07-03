@@ -1,6 +1,4 @@
 import { createBrowserRouter } from 'react-router';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { RoutePaths } from './RoutePaths';
 import App from '../App';
 import MainPage from '../pages/MainPage';
