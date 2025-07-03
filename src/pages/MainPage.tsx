@@ -1,6 +1,6 @@
 import { Box, List, ListItem, Typography } from '@mui/material';
 
-function App() {
+const MainPage = () => {
   return (
     <div>
       <Typography variant="h1">TypeScript</Typography>
@@ -58,6 +58,6 @@ function App() {
       </Box>
     </div>
   );
-}
+};
 
-export default App;
+export default MainPage;

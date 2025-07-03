@@ -26,7 +26,7 @@ const theme = createTheme({
 function App({ children }: { children?: React.ReactNode }) {
   const menuItems: { label: string; path: string }[] = [
     { label: 'Home', path: RoutePaths.HOME },
-    { label: 'TypeScript data types', path: RoutePaths.DATA_TYPES },
+    { label: 'Data types', path: RoutePaths.DATA_TYPES },
     { label: 'Logout', path: '/logout' },
   ];
 
@@ -45,6 +45,7 @@ function App({ children }: { children?: React.ReactNode }) {
           <Box
             sx={{
               width: 300,
+              flex: '0 0 300px',
               display: { xs: 'none', md: 'block' },
               backgroundColor: '#f5f5f5',
             }}

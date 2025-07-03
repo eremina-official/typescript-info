@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router';
 import { RoutePaths } from './RoutePaths';
 import App from '../App';
 import MainPage from '../pages/MainPage';
+import DataTypes from '../pages/DataTypes';
 
 const routes = [
   {
@@ -10,7 +11,7 @@ const routes = [
   },
   {
     path: RoutePaths.DATA_TYPES,
-    element: <div>Page</div>,
+    element: <DataTypes />,
   },
 ];
 
