@@ -3,6 +3,7 @@ import { RoutePaths } from './RoutePaths';
 import App from '../App';
 import MainPage from '../pages/MainPage';
 import DataTypes from '../pages/DataTypes';
+import Generics from '../pages/Generics';
 import type { JSX } from 'react';
 
 type RoutesType = {
@@ -21,7 +22,7 @@ const routes: RoutesType = [
   },
   {
     path: RoutePaths.GENERICS,
-    element: <div>Generics Page</div>,
+    element: <Generics />,
   },
 ];
 
