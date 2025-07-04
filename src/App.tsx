@@ -54,7 +54,9 @@ function App({ children }: { children?: React.ReactNode }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <AppBar sx={{ position: 'static', p: 2, fontWeight: 'bold', fontSize: '1.5rem' }}>TypeScript Features</AppBar>
+        <AppBar sx={{ position: 'static', p: 2, fontWeight: 'bold', fontSize: '1.5rem' }}>
+          TypeScript Features
+        </AppBar>
 
         <Box
           sx={{
