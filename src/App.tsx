@@ -47,6 +47,7 @@ function App({ children }: { children?: React.ReactNode }) {
     { label: 'Overview', path: RoutePaths.HOME },
     { label: 'Data types', path: RoutePaths.DATA_TYPES },
     { label: 'Generics', path: RoutePaths.GENERICS },
+    { label: 'Record', path: RoutePaths.RECORD },
   ];
 
   return (
@@ -75,7 +76,7 @@ function App({ children }: { children?: React.ReactNode }) {
                   '& .MuiMenuItem-root': {
                     mb: 1,
                     borderRadius: 1,
-                    '&:hover, &.Mui-selected': {
+                    '&:hover, &.Mui-selected, &.Mui-selected:hover': {
                       bgcolor: 'primary.light',
                       color: 'primary.contrastText',
                     },

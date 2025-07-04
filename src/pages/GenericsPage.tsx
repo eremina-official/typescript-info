@@ -9,7 +9,7 @@ const output1 = identity<string>("hello");
 const output2 = identity<number>(42);
 `;
 
-function Generics() {
+const GenericsPage = () => {
   return (
     <Box>
       <Typography variant="h1" gutterBottom>
@@ -29,6 +29,6 @@ function Generics() {
       </Typography>
     </Box>
   );
-}
+};
 
-export default Generics;
+export default GenericsPage;
