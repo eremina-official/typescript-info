@@ -92,9 +92,11 @@ function App({ children }: { children?: React.ReactNode }) {
                   <MenuItem
                     sx={{
                       width: '100%',
+                      p: 0,
                       '& a': {
                         display: 'block',
                         width: '100%',
+                        padding: '8px 16px',
                         textDecoration: 'none',
                         color: 'primary.main',
                         fontWeight: 'bold',

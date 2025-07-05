@@ -14,11 +14,16 @@ const DataTypes = () => {
           <List>
             <ListItem component="div" sx={{ display: 'block' }}>
               1. <b>Primitive Types</b>
-              <div>Basic data types in JavaScript: string, number, boolean, null, undefined, and symbol.</div>
+              <div>
+                Basic data types in JavaScript: string, number, boolean, null, undefined, and
+                symbol.
+              </div>
             </ListItem>
             <ListItem component="div" sx={{ display: 'block' }}>
               2. <b>Object Types</b>
-              <div>Objects are collections of key-value pairs and can include arrays and functions.</div>
+              <div>
+                Objects are collections of key-value pairs and can include arrays and functions.
+              </div>
             </ListItem>
             <ListItem component="div" sx={{ display: 'block' }}>
               3. <b>any</b>

@@ -21,7 +21,8 @@ const RecordPage = () => {
         TypeScript <code>Record</code> Utility Type
       </Typography>
       <Typography variant="body1">
-        The <code>Record&lt;Keys, Type&gt;</code> utility type constructs an object type whose property keys are <code>Keys</code> and whose property values are <code>Type</code>.
+        The <code>Record&lt;Keys, Type&gt;</code> utility type constructs an object type whose
+        property keys are <code>Keys</code> and whose property values are <code>Type</code>.
       </Typography>
       <Typography variant="h2" gutterBottom sx={{ fontSize: '1.2em', mt: 3 }}>
         Example
@@ -40,7 +41,8 @@ const RecordPage = () => {
         <pre style={{ margin: 0 }}>{codeExample.trim()}</pre>
       </Paper>
       <Typography variant="body1">
-        <code>Record</code> is useful for creating types for objects with known or dynamic keys, ensuring all properties have the same value type.
+        <code>Record</code> is useful for creating types for objects with known or dynamic keys,
+        ensuring all properties have the same value type.
       </Typography>
     </Box>
   );
