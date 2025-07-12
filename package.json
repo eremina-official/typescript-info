@@ -1,5 +1,6 @@
 {
   "name": "react-ts-app",
+  "homepage": "https://eremina-official.github.io/typescript-info/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,8 @@
     "start": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {
     "node": ">=22.0.0"
@@ -32,6 +34,7 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^16.2.0",
     "prettier": "3.6.2",
     "typescript": "~5.8.3",
