@@ -22,7 +22,7 @@ const routes = (Object.keys(RoutePaths) as RouteKey[]).map((key) => ({
 }));
 
 const browserRouter = createBrowserRouter(routes, {
-  basename: '/typescript-info/',
+  basename: '/typescript-info',
 });
 
 export default browserRouter;
