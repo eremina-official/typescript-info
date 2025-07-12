@@ -2,9 +2,10 @@ import { createBrowserRouter } from 'react-router';
 import RoutePaths, { type RouteKey } from './RoutePaths';
 import App from '../App';
 import MainPage from '../pages/MainPage';
-import DataTypes from '../pages/DataTypes';
+import DataTypes from '../pages/DataTypesPage';
 import GenericsPage from '../pages/GenericsPage';
 import RecordPage from '../pages/RecordPage';
+import AsConstPage from '../pages/AsConstTypeAssertionPage';
 import type { JSX } from 'react';
 
 const routeElements: Record<RouteKey, JSX.Element> = {
@@ -12,6 +13,7 @@ const routeElements: Record<RouteKey, JSX.Element> = {
   DATA_TYPES: <DataTypes />,
   GENERICS: <GenericsPage />,
   RECORD: <RecordPage />,
+  AS_CONST: <AsConstPage />,
 };
 
 const routes = (Object.keys(RoutePaths) as RouteKey[]).map((key) => ({

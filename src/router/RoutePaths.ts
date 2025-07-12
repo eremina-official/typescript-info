@@ -7,6 +7,7 @@ export const RoutePaths: RoutePathsType = {
   DATA_TYPES: '/data-types',
   GENERICS: '/generics',
   RECORD: '/record',
+  AS_CONST: '/as-const',
 } as const;
 
 export type RouteKey = keyof typeof RoutePaths;

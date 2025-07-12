@@ -38,11 +38,15 @@ const DataTypes = () => {
               <div>Union types allow a variable to hold multiple types.</div>
             </ListItem>
             <ListItem component="div" sx={{ display: 'block' }}>
-              6. <b>never</b>
+              6. <b>intersection</b>
+              <div>Intersection types combine multiple types into one.</div>
+            </ListItem>
+            <ListItem component="div" sx={{ display: 'block' }}>
+              7. <b>never</b>
               <div>The never type represents values that never occur.</div>
             </ListItem>
             <ListItem component="div" sx={{ display: 'block' }}>
-              7. <b>tuple</b>
+              8. <b>tuple</b>
               <div>Tuples are fixed-length arrays with specified types for each element.</div>
             </ListItem>
           </List>
