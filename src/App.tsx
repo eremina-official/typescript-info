@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppBar, Drawer, Menu, Stack, Box, Paper, MenuList, MenuItem } from '@mui/material';
 import RoutePaths from './router/RoutePaths';
 import './App.css';
+import { basePath } from './constants';
 
 const theme = createTheme({
   palette: {
@@ -104,7 +105,7 @@ function App({ children }: { children?: React.ReactNode }) {
                       },
                     }}
                     key={item.label}
-                    selected={window.location.pathname === item.path}
+                    selected={window.location.pathname === `${basePath}${item.path}`}
                   >
                     <NavLink to={item.path}>{item.label}</NavLink>
                   </MenuItem>

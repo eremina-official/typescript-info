@@ -7,6 +7,7 @@ import GenericsPage from '../pages/GenericsPage';
 import RecordPage from '../pages/RecordPage';
 import AsConstPage from '../pages/AsConstTypeAssertionPage';
 import type { JSX } from 'react';
+import { basePath } from '../constants';
 
 const routeElements: Record<RouteKey, JSX.Element> = {
   HOME: <MainPage />,
@@ -22,7 +23,7 @@ const routes = (Object.keys(RoutePaths) as RouteKey[]).map((key) => ({
 }));
 
 const browserRouter = createBrowserRouter(routes, {
-  basename: '/typescript-info',
+  basename: basePath,
 });
 
 export default browserRouter;
