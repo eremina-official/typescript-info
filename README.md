@@ -1,16 +1,18 @@
 # Overview of TypeScript main concepts
 
-Demo: [https://eremina-official.github.io/typescript-info/](https://eremina-official.github.io/typescript-info/)
+Demo: [https://eremina-official.github.io/typescript-info/](https://eremina-official.github.io/typescript-info/).
+
 Stack: 
 - React
 - React Router
 - Material UI
 
 ### Deploy to github pages
-Set to be deployed from the /docs folder in the 'prod' branch in the GitHub repo Settings/Pages.
+Set to be deployed from the `/docs` folder in the `prod` branch in the GitHub repo Settings/Pages.
 
 To deploy to github pages:
 - `git checkout prod`
+- merge and commit changes
 - `npm run deploy`
 
 TODO
