@@ -6,6 +6,12 @@ Stack:
 - React Router
 - Material UI
 
+### Deploy to github pages
+Set to be deployed from the /docs folder in the 'prod' branch in the GitHub repo Settings/Pages.
+
+To deploy to github pages:
+- `git checkout prod`
+- `npm run deploy`
 
 TODO
 1. Routing
