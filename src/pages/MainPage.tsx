@@ -4,7 +4,7 @@ const MainPage = () => {
   return (
     <div>
       <Typography variant="h1">TypeScript</Typography>
-      <p>test doc</p>
+      <p>test docs deploy</p>
       <Box sx={{ py: 2 }}>
         <Typography>
           <p>TypeScript is a programming language created as a superset of JavaScript.</p>
