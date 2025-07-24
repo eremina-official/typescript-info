@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 const MainPage = () => {
   return (
     <div>
-      <Typography variant="h1">TypeScript test</Typography>
+      <Typography variant="h1">TypeScript</Typography>
 
       <Box sx={{ py: 2 }}>
         <Typography>
