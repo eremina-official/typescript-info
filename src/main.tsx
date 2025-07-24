@@ -7,5 +7,5 @@ import browserRouter from './router/BrowserRouter.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={browserRouter} />
-  </StrictMode>,
+  </StrictMode>
 );
