@@ -5,7 +5,6 @@ import { AppBar, Drawer, Stack, Box, MenuList, MenuItem } from '@mui/material';
 import RoutePaths from './router/RoutePaths';
 import './App.css';
 import theme from './theme';
-import { basePath } from './constants';
 
 function App({ children }: { children?: React.ReactNode }) {
   const menuItems: { label: string; path: string }[] = [
@@ -69,7 +68,9 @@ function App({ children }: { children?: React.ReactNode }) {
                       },
                     }}
                     key={item.label}
-                    selected={window.location.pathname === `${basePath}${item.path}`}
+                    selected={
+                      window.location.pathname === `${import.meta.env.BASE_URL}${item.path}`
+                    }
                   >
                     <NavLink to={item.path}>{item.label}</NavLink>
                   </MenuItem>
