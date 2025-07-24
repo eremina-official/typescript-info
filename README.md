@@ -10,10 +10,15 @@ Stack:
 ### Deploy to github pages
 Set to be deployed from the `/docs` folder in the `prod` branch in the GitHub repo Settings/Pages.
 
-To deploy to github pages:
+To deploy to github pages from local branch:
 - `git checkout prod`
 - merge and commit changes
 - `npm run deploy`
+
+To deploy to github pages on github:
+- create a pull request to the `prod` branch
+- merge pull request
+
 
 TODO
 1. Routing
