@@ -8,7 +8,7 @@ Stack:
 - Material UI
 
 ### Deploy to github pages
-Deployed to GitHub pages with Actions
+Deployed to GitHub pages with Actions as describied [here](https://github.com/actions/upload-pages-artifact).
 
 
 TODO
