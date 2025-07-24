@@ -15,9 +15,9 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -25,7 +25,7 @@ jobs:
     - run: npm run build --if-present
 
     # Store the dist folder
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: app-build
         path: dist
@@ -37,7 +37,7 @@ jobs:
     steps:
       # Get the dist folder
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: app-build
       - run: ls dist
