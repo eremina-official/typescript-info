@@ -3,9 +3,8 @@ name: github-actions
 on:
   push:
     branches: [ "prod" ]
-
-permissions:
-  contents: write
+  pull_request:
+    branches: [ "prod" ]
 
 jobs:
   build:
