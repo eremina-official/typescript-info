@@ -7,7 +7,6 @@ import GenericsPage from '../pages/GenericsPage';
 import RecordPage from '../pages/RecordPage';
 import AsConstPage from '../pages/AsConstTypeAssertionPage';
 import type { JSX } from 'react';
-import { basePath } from '../constants';
 
 type pathType = {
   key: string;
@@ -49,7 +48,7 @@ const mappedRoutes = routes.map((item) => ({
 }));
 
 const browserRouter = createBrowserRouter(mappedRoutes, {
-  basename: basePath,
+  basename: import.meta.env.BASE_URL,
 });
 
 export default browserRouter;
