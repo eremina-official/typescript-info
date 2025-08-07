@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -6,7 +7,7 @@ import RoutePaths from './router/RoutePaths';
 import './App.css';
 import theme from './theme';
 
-function App({ children }: { children?: React.ReactNode }) {
+function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
   const menuItems: { label: string; path: string }[] = [
     { label: 'Overview', path: RoutePaths.HOME },
     { label: 'Data types', path: RoutePaths.DATA_TYPES },
