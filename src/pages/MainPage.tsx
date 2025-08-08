@@ -1,7 +1,7 @@
 import { Box, List, ListItem, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 
-const MainPage = () => {
+const MainPage: React.FC = () => {
   return (
     <div>
       <Typography variant="h1">TypeScript</Typography>

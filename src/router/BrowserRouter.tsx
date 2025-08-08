@@ -8,13 +8,13 @@ import RecordPage from '../pages/RecordPage';
 import AsConstPage from '../pages/AsConstTypeAssertionPage';
 import type { JSX } from 'react';
 
-type pathType = {
+interface PathType {
   key: string;
   path: string;
   component: JSX.Element;
-};
+}
 
-const routes: pathType[] = [
+const routes: PathType[] = [
   {
     key: PathKeys.HOME,
     path: RoutePaths.HOME,

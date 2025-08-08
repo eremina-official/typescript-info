@@ -35,6 +35,9 @@ const theme = createTheme({
       },
     },
   },
+  zIndex: {
+    drawer: 1,
+  },
 });
 
 export default theme;
