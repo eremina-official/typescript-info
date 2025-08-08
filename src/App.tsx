@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router';
 import { styled } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
 import { AppBar, Drawer, Stack, Box, MenuList, MenuItem, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from './assets/menu.svg?react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import RoutePaths from './router/RoutePaths';
 import './App.css';
-import theme from './theme';
 
 const appBarHeight = '70px';
 const drawerWidth = 250;
@@ -37,19 +35,28 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   ],
 }));
 
+const menuItems: { label: string; path: string }[] = [
+  { label: 'Overview', path: RoutePaths.HOME },
+  { label: 'Data types', path: RoutePaths.DATA_TYPES },
+  { label: 'Generics', path: RoutePaths.GENERICS },
+  { label: 'Record', path: RoutePaths.RECORD },
+  { label: 'as const', path: RoutePaths.AS_CONST },
+];
+
 function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
+  const matches = useMediaQuery((currentTheme) => currentTheme.breakpoints.up('sm'));
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(true);
-  const menuItems: { label: string; path: string }[] = [
-    { label: 'Overview', path: RoutePaths.HOME },
-    { label: 'Data types', path: RoutePaths.DATA_TYPES },
-    { label: 'Generics', path: RoutePaths.GENERICS },
-    { label: 'Record', path: RoutePaths.RECORD },
-    { label: 'as const', path: RoutePaths.AS_CONST },
-  ];
+
+  useEffect(() => {
+    if (matches) {
+      setIsDrawerOpened(true);
+    } else {
+      setIsDrawerOpened(false);
+    }
+  }, [matches]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <AppBar
           sx={{
@@ -71,7 +78,6 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
                 mr: 2,
                 ml: 1,
               },
-              // isDrawerOpened && { display: 'none' },
             ]}
           >
             <MenuIcon width={16} height={16} />
@@ -90,7 +96,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
             open={isDrawerOpened}
             variant="persistent"
             sx={{
-              display: { xs: 'none', sm: 'block' },
+              // display: { xs: 'none', sm: 'block' },
               width: drawerWidth,
               flexShrink: 0,
               '& .MuiDrawer-paper': {
@@ -162,7 +168,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
           </Main>
         </Box>
       </Box>
-    </ThemeProvider>
+    </>
   );
 }
 
