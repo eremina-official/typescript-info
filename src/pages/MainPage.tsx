@@ -8,7 +8,7 @@ const MainPage: React.FC = () => {
 
       <Box sx={{ py: 2 }}>
         <Typography>
-          <p>TypeScript is a programming language created as a superset of JavaScript.</p>
+          <p>TypeScript is a programming language created as a superset of JavaScript. Test deploy</p>
 
           <p>
             TypeScript supports all JavaScript’s features, and adds an additional layer on top of

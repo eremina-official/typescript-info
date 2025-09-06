@@ -1,50 +1,37 @@
-name: github-actions
+name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow on push or on merged pull requests to the prod branch
   push:
-    branches: [ "prod" ]
+    branches: [ "prod" ] # Run workflow on push or pull request to prod branch
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    - run: npm run build --if-present
-
-    # Store static files as artifact
-    - name: Upload static files as artifact
-      id: deployment
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: dist
-
-
   deploy:
-    needs: [build]
     runs-on: ubuntu-latest
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write      # allow publishing to GitHub Pages
+      id-token: write   # verify deployment source
 
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+      # Get latest code
+      - uses: actions/checkout@v4
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      # Install dependencies and build
+      - run: npm install
+      - run: npm run build
+
+      # Upload build folder (dist) as artifact
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist # path to build output folder
+
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: actions/deploy-pages@v4
