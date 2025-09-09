@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "prod" ] # Run workflow on push or pull request to prod branch
+    # Run workflow on push or pull request to prod branch
+    branches: [ "prod" ] 
 
 jobs:
   deploy:
@@ -19,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: npm
 
       # Install dependencies and build

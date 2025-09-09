@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 const MainPage: React.FC = () => {
   return (
     <div>
-      <Typography variant="h1">TypeScript</Typography>
+      <Typography variant="h1">TypeScript test version</Typography>
 
       <Box sx={{ py: 2 }}>
         <Typography>
