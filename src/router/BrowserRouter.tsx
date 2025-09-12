@@ -6,6 +6,7 @@ import DataTypes from '../pages/DataTypesPage';
 import GenericsPage from '../pages/GenericsPage';
 import RecordPage from '../pages/RecordPage';
 import AsConstPage from '../pages/AsConstTypeAssertionPage';
+import ExtendsPage from '../pages/Extends';
 import type { JSX } from 'react';
 
 interface PathType {
@@ -39,6 +40,11 @@ const routes: PathType[] = [
     key: PathKeys.AS_CONST,
     path: RoutePaths.AS_CONST,
     component: <AsConstPage />,
+  },
+  {
+    key: PathKeys.EXTENDS,
+    path: RoutePaths.EXTENDS,
+    component: <ExtendsPage />,
   },
 ];
 
