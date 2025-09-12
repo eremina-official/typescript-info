@@ -26,7 +26,23 @@ const theme = createTheme({
   typography: {
     h1: {
       fontSize: '2em',
+      fontWeight: 700,
     },
+    h2: {
+      fontSize: '1.5em',
+      fontWeight: 700,
+      marginBottom: '0.5em',
+    },
+    h3: {
+      fontSize: '1.17em',
+      fontWeight: 700,
+      marginBottom: '0.5em',
+    },
+    body1: {
+      fontSize: '1em',
+      lineHeight: 1.6,
+    },
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   components: {
     MuiTypography: {

@@ -41,6 +41,7 @@ const menuItems: { label: string; path: string }[] = [
   { label: 'Generics', path: RoutePaths.GENERICS },
   { label: 'Record', path: RoutePaths.RECORD },
   { label: 'as const', path: RoutePaths.AS_CONST },
+  { label: 'Extends', path: RoutePaths.EXTENDS },
 ];
 
 function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
@@ -60,7 +61,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <AppBar
           sx={{
-            position: 'static',
+            position: 'fixed',
             p: 2,
             fontWeight: 'bold',
             fontSize: '1.5rem',
@@ -160,6 +161,9 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
             open={isDrawerOpened}
             sx={{
               padding: '24px',
+              marginTop: appBarHeight,
+              minHeight: 'calc(100vh - 70px)',
+              maxHeight: 'fit-content',
               width: isDrawerOpened ? 'calc(100vh - 70px)' : '100%',
               flexGrow: 1,
             }}
