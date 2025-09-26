@@ -146,7 +146,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
                       }}
                       key={item.label}
                       selected={
-                        window.location.pathname === `${import.meta.env.BASE_URL}${item.path}`
+                        window.location.pathname === `${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`
                       }
                     >
                       <NavLink to={item.path}>{item.label}</NavLink>
