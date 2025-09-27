@@ -49,11 +49,7 @@ const Extends: React.FC = () => (
           that inherits properties from another. This helps with code reuse and type safety.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example</b>
-        </Typography>
-
-        <CodeBlock code={codeExample1} />
+        <CodeBlock code={codeExample1} title="Example" />
 
         <Typography variant="body1" gutterBottom>
           In the example above, <code>Dog</code> extends <code>Animal</code>, so it inherits the{' '}
@@ -74,20 +70,14 @@ const Extends: React.FC = () => (
           </p>
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example 1: Without extends</b>
-        </Typography>
-        <CodeBlock code={codeExample} />
+        <CodeBlock code={codeExample} title="Example 1: Without extends" />
 
         <Typography variant="body1" gutterBottom>
           Here T can be anything: number, string, object, function, etc. TypeScript doesn’t restrict
           it.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example 2: With extends</b>
-        </Typography>
-        <CodeBlock code={codeExample2} />
+        <CodeBlock code={codeExample2} title="Example 2: With extends" />
 
         <Typography variant="body1" gutterBottom>
           <p>

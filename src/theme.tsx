@@ -25,7 +25,7 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: '2em',
+      fontSize: '2rem',
       fontWeight: 700,
     },
     h2: {
@@ -38,15 +38,31 @@ const theme = createTheme({
       fontWeight: 700,
       marginBottom: '0.5em',
     },
+    subtitle2: {
+      fontSize: '1em',
+      fontWeight: 700,
+      marginBottom: '0.5em',
+    },
     body1: {
       fontSize: '1em',
       lineHeight: 1.6,
     },
+    fontSize: 16,
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   components: {
     MuiTypography: {
       defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'h5',
+          h6: 'h6',
+          subtitle1: 'h6',
+          subtitle2: 'h6',
+        },
         component: 'div',
       },
     },

@@ -64,7 +64,6 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
             position: 'fixed',
             p: 2,
             fontWeight: 'bold',
-            fontSize: '1.5rem',
             flexDirection: 'row',
             alignItems: 'center',
             zIndex: (theme) => theme.zIndex.drawer + 1,
