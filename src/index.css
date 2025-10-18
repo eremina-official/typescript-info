@@ -26,15 +26,3 @@ code {
 h1 code {
   font-size: inherit;
 }
-
-
-button.responsive {
-  font-size: 1em;       /* button text scales with parent */
-  padding: 0.5em 1em;   /* padding scales with font size */
-  border: 1px solid black;
-  margin: 0.5rem;
-}
-
-.big-text {
-  font-size: 2rem; /* parent font size is doubled */
-}

@@ -82,7 +82,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
           >
             <MenuIcon width={16} height={16} />
           </IconButton>
-          <Typography>TypeScript Features</Typography>
+          <Typography variant="h5">TypeScript Features</Typography>
         </AppBar>
 
         <Box
@@ -114,10 +114,10 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
               <Stack direction="row" sx={{ py: 2, width: '100%' }}>
                 <MenuList
                   sx={{
-                    p: 1,
+                    px: 1,
                     width: '100%',
                     '& .MuiMenuItem-root': {
-                      mb: 1,
+                      mb: 0.5,
                       borderRadius: 1,
                       '&:hover, &.Mui-selected, &.Mui-selected:hover': {
                         bgcolor: 'primary.light',
@@ -145,7 +145,8 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
                       }}
                       key={item.label}
                       selected={
-                        window.location.pathname === `${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`
+                        window.location.pathname ===
+                        `${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`
                       }
                     >
                       <NavLink to={item.path}>{item.label}</NavLink>

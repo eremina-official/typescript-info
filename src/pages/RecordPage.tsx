@@ -18,7 +18,7 @@ const scores: Scores = {
 const RecordPage = () => {
   return (
     <Box>
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h1">
         TypeScript <code>Record</code> Utility Type
       </Typography>
       <Typography variant="body1">

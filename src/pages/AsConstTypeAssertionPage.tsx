@@ -16,7 +16,7 @@ const obj = { text: 'example' } as const;
 const AsConstPage = () => {
   return (
     <Box>
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h1">
         TypeScript <code>as const</code> Type Assertion
       </Typography>
       <Typography variant="body1">

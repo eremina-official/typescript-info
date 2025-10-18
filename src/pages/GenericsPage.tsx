@@ -13,9 +13,7 @@ const output2 = identity<number>(42);
 const GenericsPage = () => {
   return (
     <Box>
-      <Typography variant="h1" gutterBottom>
-        Generics in TypeScript
-      </Typography>
+      <Typography variant="h1">Generics in TypeScript</Typography>
       <Typography variant="body1">
         Generics provide a way to create reusable components that work with a variety of types
         rather than a single one. They allow you to capture the type the user provides so you can

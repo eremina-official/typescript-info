@@ -6,7 +6,7 @@ const DataTypes = () => {
     <div>
       <Typography variant="h1">Data Types</Typography>
 
-      <Box sx={{ py: 2 }}>
+      <Box>
         <Typography>
           <p>TypeScript supports all JavaScript’s data types, and adds some additional ones.</p>
 

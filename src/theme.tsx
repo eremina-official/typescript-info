@@ -27,6 +27,7 @@ const theme = createTheme({
     h1: {
       fontSize: '2rem',
       fontWeight: 700,
+      marginBottom: '1em',
     },
     h2: {
       fontSize: '1.5em',
@@ -63,7 +64,7 @@ const theme = createTheme({
           subtitle1: 'h6',
           subtitle2: 'h6',
         },
-        component: 'div',
+        // component: 'div',
       },
     },
   },
