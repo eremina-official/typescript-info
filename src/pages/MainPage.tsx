@@ -6,7 +6,7 @@ const MainPage: React.FC = () => {
     <div>
       <Typography variant="h1">TypeScript</Typography>
 
-      <Box sx={{ py: 2 }}>
+      <Box>
         <Typography>
           <p>TypeScript is a programming language created as a superset of JavaScript.</p>
 

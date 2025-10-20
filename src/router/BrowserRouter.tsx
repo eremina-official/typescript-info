@@ -1,56 +1,65 @@
 import { createBrowserRouter } from 'react-router';
+import { lazy } from 'react';
 import RoutePaths, { PathKeys } from './RoutePaths';
 import App from '../App';
-import MainPage from '../pages/MainPage';
-import DataTypes from '../pages/DataTypesPage';
-import GenericsPage from '../pages/GenericsPage';
-import RecordPage from '../pages/RecordPage';
-import AsConstPage from '../pages/AsConstTypeAssertionPage';
-import ExtendsPage from '../pages/Extends';
-import type { JSX } from 'react';
+import { LazyPageWrapper } from '../components/LazyPageComponents';
 
-interface PathType {
+// Eagerly load the main page for immediate rendering
+import MainPage from '../pages/MainPage';
+
+// Lazy load secondary pages
+const DataTypes = lazy(() => import('../pages/DataTypesPage'));
+const GenericsPage = lazy(() => import('../pages/GenericsPage'));
+const RecordPage = lazy(() => import('../pages/RecordPage'));
+const AsConstPage = lazy(() => import('../pages/AsConstTypeAssertionPage'));
+const ExtendsPage = lazy(() => import('../pages/Extends'));
+
+interface RouteConfig {
   key: string;
   path: string;
-  component: JSX.Element;
+  Component: React.ComponentType;
 }
 
-const routes: PathType[] = [
+const routes: RouteConfig[] = [
   {
     key: PathKeys.HOME,
     path: RoutePaths.HOME,
-    component: <MainPage />,
+    Component: MainPage,
   },
   {
     key: PathKeys.DATA_TYPES,
     path: RoutePaths.DATA_TYPES,
-    component: <DataTypes />,
+    Component: DataTypes,
   },
   {
     key: PathKeys.GENERICS,
     path: RoutePaths.GENERICS,
-    component: <GenericsPage />,
+    Component: GenericsPage,
   },
   {
     key: PathKeys.RECORD,
     path: RoutePaths.RECORD,
-    component: <RecordPage />,
+    Component: RecordPage,
   },
   {
     key: PathKeys.AS_CONST,
     path: RoutePaths.AS_CONST,
-    component: <AsConstPage />,
+    Component: AsConstPage,
   },
   {
     key: PathKeys.EXTENDS,
     path: RoutePaths.EXTENDS,
-    component: <ExtendsPage />,
+    Component: ExtendsPage,
   },
 ];
 
-const mappedRoutes = routes.map((item) => ({
-  path: item.path,
-  element: <App>{item.component}</App>,
+const mappedRoutes = routes.map((route) => ({
+  path: route.path,
+  element: (
+    <App>
+      {route.key === PathKeys.HOME ? <MainPage /> : <LazyPageWrapper Component={route.Component} />}
+    </App>
+  ),
 }));
 
 const browserRouter = createBrowserRouter(mappedRoutes, {

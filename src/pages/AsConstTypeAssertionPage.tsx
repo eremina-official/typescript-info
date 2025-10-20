@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, Paper, Box, List, ListItem } from '@mui/material';
+import { Typography, Box, List, ListItem } from '@mui/material';
+import CodeBlock from '../components/Code';
 
 const codeExample = `
 // Type 'John'
@@ -15,7 +16,7 @@ const obj = { text: 'example' } as const;
 const AsConstPage = () => {
   return (
     <Box>
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h1">
         TypeScript <code>as const</code> Type Assertion
       </Typography>
       <Typography variant="body1">
@@ -36,22 +37,8 @@ const AsConstPage = () => {
         </List>
       </Typography>
 
-      <Typography variant="h2" gutterBottom sx={{ fontSize: '1.2em', mt: 3 }}>
-        Example
-      </Typography>
-      <Paper
-        variant="outlined"
-        sx={{
-          p: 2,
-          background: '#f7f7f7',
-          fontFamily: 'monospace',
-          fontSize: '1em',
-          mb: 2,
-          overflowX: 'auto',
-        }}
-      >
-        <pre style={{ margin: 0 }}>{codeExample.trim()}</pre>
-      </Paper>
+      <CodeBlock code={codeExample} title="Example" />
+
       <Typography variant="body1">
         Using <code>as const</code> is helpful when you want to create literal types from arrays or
         objects, ensuring their values and types remain constant and precise.

@@ -24,21 +24,15 @@ interface Dog extends Animal {
 
 const Extends: React.FC = () => (
   <Box>
-    <Typography variant="h1" gutterBottom>
+    <Typography variant="h1">
       TypeScript <code>extends</code> Keyword
     </Typography>
 
     <Typography variant="h2">Usage</Typography>
-    <List>
-      <ListItem>
-        <ListItemText primary="1. Extending interfaces" />
-      </ListItem>
-      <ListItem>
-        <ListItemText primary="2. Extending classes" />
-      </ListItem>
-      <ListItem>
-        <ListItemText primary="3. Generic constraints (T extends U)" />
-      </ListItem>
+    <List dense sx={{ pt: 0, pb: 2 }}>
+      <ListItem>1. Extending interfaces</ListItem>
+      <ListItem>2. Extending classes</ListItem>
+      <ListItem>3. Generic constraints (T extends U)</ListItem>
     </List>
 
     <Stack spacing={3}>
@@ -49,11 +43,7 @@ const Extends: React.FC = () => (
           that inherits properties from another. This helps with code reuse and type safety.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example</b>
-        </Typography>
-
-        <CodeBlock code={codeExample1} />
+        <CodeBlock code={codeExample1} title="Example" />
 
         <Typography variant="body1" gutterBottom>
           In the example above, <code>Dog</code> extends <code>Animal</code>, so it inherits the{' '}
@@ -74,20 +64,14 @@ const Extends: React.FC = () => (
           </p>
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example 1: Without extends</b>
-        </Typography>
-        <CodeBlock code={codeExample} />
+        <CodeBlock code={codeExample} title="Example 1: Without extends" />
 
         <Typography variant="body1" gutterBottom>
           Here T can be anything: number, string, object, function, etc. TypeScript doesn’t restrict
           it.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 3 }}>
-          <b>Example 2: With extends</b>
-        </Typography>
-        <CodeBlock code={codeExample2} />
+        <CodeBlock code={codeExample2} title="Example 2: With extends" />
 
         <Typography variant="body1" gutterBottom>
           <p>
