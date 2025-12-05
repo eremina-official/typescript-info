@@ -11,3 +11,6 @@ export const menuItems: { label: string; path: string }[] = [
   { label: 'as const', path: RoutePaths.AS_CONST },
   { label: 'Extends', path: RoutePaths.EXTENDS },
 ];
+
+export const APP_BAR_HEIGHT = '70px';
+export const DRAWER_WIDTH = 250;
