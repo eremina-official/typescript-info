@@ -14,56 +14,42 @@ const RecordPage = lazy(() => import('../pages/RecordPage'));
 const AsConstPage = lazy(() => import('../pages/AsConstTypeAssertionPage'));
 const ExtendsPage = lazy(() => import('../pages/Extends'));
 
-interface RouteConfig {
-  key: string;
-  path: string;
-  Component: React.ComponentType;
-}
-
-const routes: RouteConfig[] = [
+const browserRouter = createBrowserRouter(
+  [
+    {
+      path: RoutePaths.HOME,
+      element: <App />,
+      children: [
+        {
+          index: true,
+          element: <MainPage />,
+        },
+        {
+          path: RoutePaths.DATA_TYPES,
+          element: <LazyPageWrapper Component={DataTypes} />,
+        },
+        {
+          path: RoutePaths.GENERICS,
+          element: <LazyPageWrapper Component={GenericsPage} />,
+        },
+        {
+          path: RoutePaths.RECORD,
+          element: <LazyPageWrapper Component={RecordPage} />,
+        },
+        {
+          path: RoutePaths.AS_CONST,
+          element: <LazyPageWrapper Component={AsConstPage} />,
+        },
+        {
+          path: RoutePaths.EXTENDS,
+          element: <LazyPageWrapper Component={ExtendsPage} />,
+        },
+      ],
+    },
+  ],
   {
-    key: PathKeys.HOME,
-    path: RoutePaths.HOME,
-    Component: MainPage,
-  },
-  {
-    key: PathKeys.DATA_TYPES,
-    path: RoutePaths.DATA_TYPES,
-    Component: DataTypes,
-  },
-  {
-    key: PathKeys.GENERICS,
-    path: RoutePaths.GENERICS,
-    Component: GenericsPage,
-  },
-  {
-    key: PathKeys.RECORD,
-    path: RoutePaths.RECORD,
-    Component: RecordPage,
-  },
-  {
-    key: PathKeys.AS_CONST,
-    path: RoutePaths.AS_CONST,
-    Component: AsConstPage,
-  },
-  {
-    key: PathKeys.EXTENDS,
-    path: RoutePaths.EXTENDS,
-    Component: ExtendsPage,
-  },
-];
-
-const mappedRoutes = routes.map((route) => ({
-  path: route.path,
-  element: (
-    <App>
-      {route.key === PathKeys.HOME ? <MainPage /> : <LazyPageWrapper Component={route.Component} />}
-    </App>
-  ),
-}));
-
-const browserRouter = createBrowserRouter(mappedRoutes, {
-  basename: import.meta.env.BASE_URL,
-});
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 export default browserRouter;

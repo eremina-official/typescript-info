@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, Outlet } from 'react-router';
 import { styled } from '@mui/material/styles';
 import { AppBar, Drawer, Stack, Box, MenuList, MenuItem, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
@@ -44,7 +44,7 @@ const menuItems: { label: string; path: string }[] = [
   { label: 'Extends', path: RoutePaths.EXTENDS },
 ];
 
-function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
+function App(): React.JSX.Element {
   const matches = useMediaQuery((currentTheme) => currentTheme.breakpoints.up('sm'));
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(true);
 
@@ -168,7 +168,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
               flexGrow: 1,
             }}
           >
-            {children}
+            <Outlet />
           </Main>
         </Box>
       </Box>
