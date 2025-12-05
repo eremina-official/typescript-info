@@ -13,6 +13,7 @@ const GenericsPage = lazy(() => import('../pages/GenericsPage'));
 const RecordPage = lazy(() => import('../pages/RecordPage'));
 const AsConstPage = lazy(() => import('../pages/AsConstTypeAssertionPage'));
 const ExtendsPage = lazy(() => import('../pages/Extends'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const browserRouter = createBrowserRouter(
   [
@@ -43,6 +44,10 @@ const browserRouter = createBrowserRouter(
         {
           path: RoutePaths.EXTENDS,
           element: <LazyPageWrapper Component={ExtendsPage} />,
+        },
+        {
+          path: '*',
+          element: <LazyPageWrapper Component={NotFoundPage} />,
         },
       ],
     },
