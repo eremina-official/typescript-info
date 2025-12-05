@@ -5,7 +5,7 @@ import { AppBar, Drawer, Stack, Box, MenuList, MenuItem, Typography } from '@mui
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from './assets/menu.svg?react';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import RoutePaths from './router/RoutePaths';
+import { menuItems } from './constants';
 import './App.css';
 
 const appBarHeight = '70px';
@@ -35,14 +35,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   ],
 }));
 
-const menuItems: { label: string; path: string }[] = [
-  { label: 'Overview', path: RoutePaths.HOME },
-  { label: 'Data types', path: RoutePaths.DATA_TYPES },
-  { label: 'Generics', path: RoutePaths.GENERICS },
-  { label: 'Record', path: RoutePaths.RECORD },
-  { label: 'as const', path: RoutePaths.AS_CONST },
-  { label: 'Extends', path: RoutePaths.EXTENDS },
-];
+
 
 function App(): React.JSX.Element {
   const matches = useMediaQuery((currentTheme) => currentTheme.breakpoints.up('sm'));
