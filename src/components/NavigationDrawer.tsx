@@ -1,5 +1,5 @@
 import { Drawer, Box, Stack, MenuList, MenuItem } from '@mui/material';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import { menuItems, APP_BAR_HEIGHT, DRAWER_WIDTH } from '../constants';
 
 interface NavigationDrawerProps {
@@ -7,6 +7,8 @@ interface NavigationDrawerProps {
 }
 
 const NavigationDrawer = ({ open }: NavigationDrawerProps) => {
+  const location = useLocation();
+
   return (
     <Drawer
       open={open}
@@ -44,8 +46,8 @@ const NavigationDrawer = ({ open }: NavigationDrawerProps) => {
               },
             }}
           >
-            {menuItems.map((item) => (
-              <MenuItem
+            {menuItems.map((item) => {
+              return <MenuItem
                 sx={{
                   width: '100%',
                   p: 0,
@@ -60,13 +62,13 @@ const NavigationDrawer = ({ open }: NavigationDrawerProps) => {
                 }}
                 key={item.label}
                 selected={
-                  window.location.pathname ===
-                  `${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`
+                  location.pathname ===
+                  `${item.path}`
                 }
               >
                 <NavLink to={item.path}>{item.label}</NavLink>
               </MenuItem>
-            ))}
+            })}
           </MenuList>
         </Stack>
       </Box>

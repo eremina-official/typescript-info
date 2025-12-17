@@ -25,7 +25,7 @@ const AsConstPage = () => {
         making their types immutable and as narrow as possible.
       </Typography>
 
-      <Typography variant="body1" gutterBottom sx={{ mt: 3 }}>
+      <Typography variant="body1" component="div" gutterBottom sx={{ mt: 3 }}>
         That means:
         <List>
           <ListItem>

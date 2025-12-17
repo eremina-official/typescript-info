@@ -72,7 +72,7 @@ function App(): React.JSX.Element {
           >
             <MenuIcon width={16} height={16} />
           </IconButton>
-          <Typography variant="h5">TypeScript Features</Typography>
+          <Typography variant="h5" sx={{ color: 'primary.contrastText' }}>TypeScript Features</Typography>
         </AppBar>
 
         <Box

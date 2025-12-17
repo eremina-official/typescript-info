@@ -54,7 +54,7 @@ const Extends: React.FC = () => (
       <Box>
         <Typography variant="h3">Generic Constraints</Typography>
 
-        <Typography variant="body1" sx={{ mt: 1 }}>
+        <Typography variant="body1" component="div" sx={{ mt: 1 }}>
           <p>In TypeScript generics, the extends keyword means:</p>
           <p>
             👉 <i>The generic type must satisfy (or be assignable to) this constraint.</i>
@@ -73,7 +73,7 @@ const Extends: React.FC = () => (
 
         <CodeBlock code={codeExample2} title="Example 2: With extends" />
 
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="body1" component="div" gutterBottom>
           <p>
             Now <i>T</i> must be something that has a <code>.length</code> property.
           </p>
