@@ -10,6 +10,7 @@ export const menuItems: { label: string; path: string }[] = [
   { label: 'Record', path: RoutePaths.RECORD },
   { label: 'as const', path: RoutePaths.AS_CONST },
   { label: 'Extends', path: RoutePaths.EXTENDS },
+  { label: 'Operators', path: RoutePaths.OPERATORS },
 ];
 
 export const APP_BAR_HEIGHT = '70px';
