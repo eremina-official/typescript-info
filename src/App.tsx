@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router';
+import { Outlet } from 'react-router';
 import { styled } from '@mui/material/styles';
-import { AppBar, Drawer, Stack, Box, MenuList, MenuItem, Typography } from '@mui/material';
+import { AppBar, Box, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from './assets/menu.svg?react';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import RoutePaths from './router/RoutePaths';
+import { APP_BAR_HEIGHT, DRAWER_WIDTH } from './constants';
+import NavigationDrawer from './components/NavigationDrawer';
 import './App.css';
-
-const appBarHeight = '70px';
-const drawerWidth = 250;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -20,7 +18,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
+  marginLeft: `-${DRAWER_WIDTH}px`,
   variants: [
     {
       props: ({ open }) => open,
@@ -35,16 +33,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   ],
 }));
 
-const menuItems: { label: string; path: string }[] = [
-  { label: 'Overview', path: RoutePaths.HOME },
-  { label: 'Data types', path: RoutePaths.DATA_TYPES },
-  { label: 'Generics', path: RoutePaths.GENERICS },
-  { label: 'Record', path: RoutePaths.RECORD },
-  { label: 'as const', path: RoutePaths.AS_CONST },
-  { label: 'Extends', path: RoutePaths.EXTENDS },
-];
-
-function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
+function App(): React.JSX.Element {
   const matches = useMediaQuery((currentTheme) => currentTheme.breakpoints.up('sm'));
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(true);
 
@@ -67,6 +56,7 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
             flexDirection: 'row',
             alignItems: 'center',
             zIndex: (theme) => theme.zIndex.drawer + 1,
+            height: APP_BAR_HEIGHT,
           }}
         >
           <IconButton
@@ -82,93 +72,30 @@ function App({ children }: { children?: React.ReactNode }): React.JSX.Element {
           >
             <MenuIcon width={16} height={16} />
           </IconButton>
-          <Typography variant="h5">TypeScript Features</Typography>
+          <Typography variant="h5" sx={{ color: 'primary.contrastText' }}>TypeScript Features</Typography>
         </AppBar>
 
         <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'row' },
-            minHeight: 'calc(100vh - 70px)',
+            minHeight: `calc(100vh - ${APP_BAR_HEIGHT})`,
           }}
         >
-          <Drawer
-            open={isDrawerOpened}
-            variant="persistent"
-            sx={{
-              // display: { xs: 'none', sm: 'block' },
-              width: drawerWidth,
-              flexShrink: 0,
-              '& .MuiDrawer-paper': {
-                width: drawerWidth,
-                mt: appBarHeight,
-                backgroundColor: 'inherit',
-              },
-            }}
-          >
-            <Box
-              sx={{
-                flex: '0 0 250px',
-              }}
-            >
-              <Stack direction="row" sx={{ py: 2, width: '100%' }}>
-                <MenuList
-                  sx={{
-                    px: 1,
-                    width: '100%',
-                    '& .MuiMenuItem-root': {
-                      mb: 0.5,
-                      borderRadius: 1,
-                      '&:hover, &.Mui-selected, &.Mui-selected:hover': {
-                        bgcolor: 'primary.light',
-                        color: 'primary.contrastText',
-                      },
-                      '&:where(:hover, .Mui-selected) a': {
-                        color: 'primary.contrastText',
-                      },
-                    },
-                  }}
-                >
-                  {menuItems.map((item) => (
-                    <MenuItem
-                      sx={{
-                        width: '100%',
-                        p: 0,
-                        '& a': {
-                          display: 'block',
-                          width: '100%',
-                          padding: '8px 16px',
-                          textDecoration: 'none',
-                          color: 'primary.main',
-                          fontWeight: 'bold',
-                        },
-                      }}
-                      key={item.label}
-                      selected={
-                        window.location.pathname ===
-                        `${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`
-                      }
-                    >
-                      <NavLink to={item.path}>{item.label}</NavLink>
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </Stack>
-            </Box>
-          </Drawer>
+          <NavigationDrawer open={isDrawerOpened} />
 
           <Main
             open={isDrawerOpened}
             sx={{
               padding: '24px',
-              marginTop: appBarHeight,
-              minHeight: 'calc(100vh - 70px)',
+              marginTop: APP_BAR_HEIGHT,
+              minHeight: `calc(100vh - ${APP_BAR_HEIGHT})`,
               maxHeight: 'fit-content',
-              width: isDrawerOpened ? 'calc(100vh - 70px)' : '100%',
+              width: isDrawerOpened ? `calc(100vh - ${APP_BAR_HEIGHT})` : '100%',
               flexGrow: 1,
             }}
           >
-            {children}
+            <Outlet />
           </Main>
         </Box>
       </Box>

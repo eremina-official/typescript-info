@@ -1,4 +1,8 @@
 :root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,16 +17,24 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f1f5f9;
+  color: #1e293b;
 }
 
 code {
-  padding: 2px;
-  display: inline-flex;
-  font-size: 1rem;
-  background-color: #bec0c2;
-  border-radius: 5px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  color: #e2e8f0;
+  background-color: #1e293b;
+  border-radius: 6px;
 }
 
-h1 code {
+h1 code, h2 code, h3 code {
   font-size: inherit;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }

@@ -17,8 +17,7 @@ const DataTypes = () => {
               <Stack spacing={1}>
                 <b>1. Primitive Types</b>
                 <div>
-                  Basic data types in JavaScript: string, number, boolean, null, undefined, and
-                  symbol.
+                  Basic data types in JavaScript: string, number, boolean, null, undefined, bigint and symbol.
                 </div>
               </Stack>
             </ListItem>
