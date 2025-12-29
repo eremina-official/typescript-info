@@ -71,6 +71,18 @@ const theme = createTheme({
     borderRadius: 12,
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        code: {
+          backgroundColor: 'oklch(0.92 0.012 260)',
+          color: '#0f172a', // Slate 900
+          padding: '2px 4px',
+          borderRadius: '4px',
+          fontSize: '0.9em',
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace',
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {
