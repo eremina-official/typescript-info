@@ -9,6 +9,7 @@ export const PathKeys: RoutePathsType = {
   RECORD: 'RECORD',
   AS_CONST: 'AS_CONST',
   EXTENDS: 'EXTENDS',
+  UTILITY_TYPES: 'UTILITY_TYPES',
   OPERATORS: 'OPERATORS',
 } as const;
 
@@ -19,6 +20,7 @@ export const RoutePaths: RoutePathsType = {
   RECORD: '/record',
   AS_CONST: '/as-const',
   EXTENDS: '/extends',
+  UTILITY_TYPES: '/utility-types',
   OPERATORS: '/operators',
 } as const;
 

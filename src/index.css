@@ -21,15 +21,6 @@ body {
   color: #1e293b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  padding: 0.2em 0.4em;
-  font-size: 0.875em;
-  color: #e2e8f0;
-  background-color: #1e293b;
-  border-radius: 6px;
-}
-
 h1 code, h2 code, h3 code {
   font-size: inherit;
 }
