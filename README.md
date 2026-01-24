@@ -1,11 +1,15 @@
 # Overview of TypeScript main concepts
 
+Main goal is summarize TypeScript features for devs moving from JavaScript to TypeScript.
+
 Demo: [https://eremina-official.github.io/typescript-info/](https://eremina-official.github.io/typescript-info/).
 
 Stack: 
 - React
 - React Router
 - Material UI
+- Vite
+- TypeScript
 
 ### Deploy to github pages
 Deployed to GitHub pages with Actions as describied [here](https://github.com/actions/upload-pages-artifact).
